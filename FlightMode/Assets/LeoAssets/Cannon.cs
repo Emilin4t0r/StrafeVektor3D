@@ -87,7 +87,7 @@ public class Cannon : MonoBehaviour {
 	}
 
 	private void OnGUI() {
-		GUI.Label(new Rect(10, 70, 100, 20), "Shots Left: " + (magazine - shotsFired));
+		GUI.Label(new Rect(10, 110, 100, 20), "Shots Left: " + (magazine - shotsFired));
 	}
 
 	void Shoot() {

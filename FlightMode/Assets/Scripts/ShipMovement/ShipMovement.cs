@@ -85,8 +85,10 @@ public class ShipMovement : MonoBehaviour {
 	}
 
 	private void OnGUI() {
-		GUI.Label(new Rect(10, 10, 100, 20), "Speed: " + moveSpeed);
-		GUI.Label(new Rect(10, 30, 200, 20), "X = " + Xcoord);
-		GUI.Label(new Rect(10, 50, 200, 20), "Y = " + Ycoord);
+		GUI.Label(new Rect(10, 10, 400, 40), "PRE-ALPHA BUILD");
+		GUI.Label(new Rect(10, 50, 100, 20), "Speed: " + moveSpeed);
+		GUI.Label(new Rect(10, 70, 200, 20), "X = " + Xcoord);
+		GUI.Label(new Rect(10, 90, 200, 20), "Y = " + Ycoord);
+
 	}
 }
