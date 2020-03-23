@@ -7,7 +7,6 @@ public class torpedo : MonoBehaviour {
 	public float torque;
 	public GameObject particle;
 
-	// Start is called before the first frame update
 	void Start() {
 		rb = GetComponent<Rigidbody>();
 	}

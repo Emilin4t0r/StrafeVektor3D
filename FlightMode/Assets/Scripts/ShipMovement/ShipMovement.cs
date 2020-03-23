@@ -7,6 +7,11 @@ public class ShipMovement : MonoBehaviour {
 	public float accelerationSpeed = 2;
 	public float maxSpeedF;
 	public float maxSpeedB;
+	public float turboSpeed;
+
+	float turboAccSpd;
+	float normalMaxSpeedF; // Store normal speed & acceleration values
+	float normalAccSpd;
 
 	private int[] center = new int[2];
 	private float blockX;
@@ -19,6 +24,10 @@ public class ShipMovement : MonoBehaviour {
 	void Start() {
 		center[0] = Screen.width / 2;
 		center[1] = Screen.height / 2;
+
+		turboAccSpd = accelerationSpeed - accelerationSpeed / 2;
+		normalMaxSpeedF = maxSpeedF; // Store normal speed & acceleration values
+		normalAccSpd = accelerationSpeed;
 	}
 
 	void Update() {
@@ -49,6 +58,16 @@ public class ShipMovement : MonoBehaviour {
 		}
 		changeRatePerSecond *= 50;
 		moveSpeed = Mathf.MoveTowards(moveSpeed, moveTowards, changeRatePerSecond);
+
+		//Turbo
+
+		if (Input.GetKey(KeyCode.LeftControl)) {
+			maxSpeedF = turboSpeed;
+			accelerationSpeed = turboAccSpd;
+		} else {
+			maxSpeedF = normalMaxSpeedF;
+			accelerationSpeed = normalAccSpd;
+		}
 
 		transform.Translate(0, 0, moveSpeed * Time.deltaTime);
 	}
