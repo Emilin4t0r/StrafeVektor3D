@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{FCB392A3-6031-0F3E-EBFA-A44214F132CE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LeoAssets/Cannon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/V2/ShipRoll.cs">
     <Files>
-      <File FileName="Assets/Scripts/V2/ShipRoll.cs" Line="12" Column="68" />
+      <File FileName="Assets/Scripts/V2/ShipRoll.cs" Line="16" Column="1" />
       <File FileName="Assets/Scripts/ShipMovement/ShipMovement.cs" Line="56" Column="13" />
       <File FileName="Assets/Scripts/ShipMovement/ShipStrafe.cs" Line="7" Column="37" />
       <File FileName="Assets/Scripts/ShipMovement/ShipHover.cs" Line="27" Column="52" />

@@ -676,7 +676,7 @@ PrefabInstance:
     - target: {fileID: 1694839346927502288, guid: 6a1dc66280c1e94419ec6ab02077ea21,
         type: 3}
       propertyPath: cannontype
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1694839346927502288, guid: 6a1dc66280c1e94419ec6ab02077ea21,
         type: 3}
