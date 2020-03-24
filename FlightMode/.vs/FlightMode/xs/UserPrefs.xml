@@ -2,14 +2,15 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TurretAI.cs">
     <Files>
       <File FileName="Assets/Scripts/V2/ShipRoll.cs" Line="16" Column="1" />
-      <File FileName="Assets/Scripts/ShipMovement/ShipMovement.cs" Line="28" Column="59" />
+      <File FileName="Assets/Scripts/ShipMovement/ShipMovement.cs" Line="89" Column="59" />
       <File FileName="Assets/Scripts/ShipMovement/ShipStrafe.cs" Line="7" Column="37" />
       <File FileName="Assets/Scripts/ShipMovement/ShipHover.cs" Line="27" Column="52" />
       <File FileName="Assets/Scripts/Camera/CameraController.cs" Line="21" Column="66" />
-      <File FileName="Assets/LeoAssets/Cannon.cs" Line="54" Column="16" />
+      <File FileName="Assets/LeoAssets/Cannon.cs" Line="90" Column="28" />
       <File FileName="Assets/Scripts/Camera/CameraShake.cs" Line="25" Column="18" />
       <File FileName="Assets/LeoAssets/torpedo.cs" Line="24" Column="1" />
-      <File FileName="Assets/Scripts/TurretAI.cs" Line="35" Column="59" />
+      <File FileName="Assets/Scripts/TurretAI.cs" Line="41" Column="74" />
+      <File FileName="Assets/Scripts/AALeadPoint.cs" Line="14" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

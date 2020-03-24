@@ -95,6 +95,7 @@
     <Compile Include="Assets\LeoAssets\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
     <Compile Include="Assets\LeoAssets\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
     <Compile Include="Assets\LeoAssets\torpedo.cs" />
+    <Compile Include="Assets\Scripts\AALeadPoint.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\ShipMovement\ShipHover.cs" />
