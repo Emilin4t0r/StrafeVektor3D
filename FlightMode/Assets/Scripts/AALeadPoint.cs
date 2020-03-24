@@ -11,6 +11,6 @@ public class AALeadPoint : MonoBehaviour {
 	}
 
 	void Update() {
-		transform.localPosition = new Vector3(0, 0, ship.moveSpeed);
+		transform.localPosition = new Vector3(0, -1, ship.moveSpeed);
 	}
 }

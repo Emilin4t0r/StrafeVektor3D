@@ -9,8 +9,8 @@
       <File FileName="Assets/LeoAssets/Cannon.cs" Line="90" Column="28" />
       <File FileName="Assets/Scripts/Camera/CameraShake.cs" Line="25" Column="18" />
       <File FileName="Assets/LeoAssets/torpedo.cs" Line="24" Column="1" />
-      <File FileName="Assets/Scripts/TurretAI.cs" Line="41" Column="74" />
-      <File FileName="Assets/Scripts/AALeadPoint.cs" Line="14" Column="26" />
+      <File FileName="Assets/Scripts/TurretAI.cs" Line="17" Column="1" />
+      <File FileName="Assets/Scripts/AALeadPoint.cs" Line="14" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

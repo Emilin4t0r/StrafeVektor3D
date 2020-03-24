@@ -33,11 +33,15 @@ public class TurretAI : MonoBehaviour {
 		float x = barrel.transform.eulerAngles.x;
 		barrel.transform.eulerAngles = new Vector3(x, y, 0);
 
-		if (Physics.Linecast(transform.position, player.transform.position)) {
+		RaycastHit hit;
+		Vector3 fwd = barrel.transform.TransformDirection(Vector3.forward);
+		Debug.DrawRay(transform.position, fwd * range, Color.red, 0.01f);
+		if (Physics.Raycast(transform.position, fwd, out hit, range) && hit.transform.CompareTag("Player")) {
 			targetInSight = true;
 		} else {
 			targetInSight = false;
 		}
+
 		if (player.GetComponent<ShipMovement>().moveSpeed > smallestTargetSpeed)
 			shootForce = player.GetComponent<ShipMovement>().moveSpeed;
 		if (counter >= fireRate && Vector3.Distance(transform.position, target.transform.position) < range && targetInSight) {
