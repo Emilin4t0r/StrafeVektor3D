@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 2937851347053727217}
   - component: {fileID: 1487957216305655833}
   m_Layer: 10
-  m_Name: EnemyTorpedo
+  m_Name: FlakEnemyTorpedo
   m_TagString: Torpedo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 6758447477551177852}
   m_LocalRotation: {x: 0.7020929, y: -0, z: -0, w: 0.7120854}
   m_LocalPosition: {x: 2.174, y: 3.1549997, z: 4.02}
-  m_LocalScale: {x: 0.04898307, y: 0.0867735, z: 0.04898307}
+  m_LocalScale: {x: 0.1, y: 0.2, z: 0.1}
   m_Children:
   - {fileID: 918022205887579354}
   m_Father: {fileID: 0}
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   torque: 20
-  particle: {fileID: 7070465220517492653, guid: 71002e7b3afae41d9a2c899e1919344b,
+  particle: {fileID: 7070465220517492653, guid: 34dedecf443a0446f871876505369800,
     type: 3}
-  flak: 0
+  flak: 1
 --- !u!135 &1487957216305655833
 SphereCollider:
   m_ObjectHideFlags: 0

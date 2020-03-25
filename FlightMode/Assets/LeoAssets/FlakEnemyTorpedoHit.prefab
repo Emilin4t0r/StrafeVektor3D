@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5504318160462296254}
   - component: {fileID: 6223232247792363192}
   m_Layer: 0
-  m_Name: EnemyTorpedoHit
+  m_Name: FlakEnemyTorpedoHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 7070465220517492653}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1025.0353, y: 577.56, z: 862.86}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1601218833754652710}
   m_Father: {fileID: 0}

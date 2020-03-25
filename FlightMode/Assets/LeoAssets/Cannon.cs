@@ -8,6 +8,7 @@ public class Cannon : MonoBehaviour {
 	public GameObject crosshairs;
 	public GameObject baseCrosshairPos;
 	public float castRange;
+	LayerMask layerMask;
 
 	public float counter;
 	public bool reloading;
@@ -45,6 +46,7 @@ public class Cannon : MonoBehaviour {
 			magazine = 30;
 			cameraShakeAmt = 0.3f;
 		}
+		layerMask = LayerMask.GetMask("Default");
 	}
 
 	void Update() {
@@ -52,7 +54,7 @@ public class Cannon : MonoBehaviour {
 		RaycastHit hit;
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
 		Debug.DrawRay(transform.position, fwd * 100, Color.green, 1f);
-		if (Physics.Raycast(transform.position, fwd, out hit, castRange) && !hit.transform.CompareTag("Torpedo")) {
+		if (Physics.Raycast(transform.position, fwd, out hit, castRange, layerMask)) {
 			crosshairs.transform.position = hit.point;
 		} else {
 			crosshairs.transform.position = baseCrosshairPos.transform.position;

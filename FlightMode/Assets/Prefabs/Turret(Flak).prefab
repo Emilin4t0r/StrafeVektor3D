@@ -137,17 +137,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c834e85ae6eab4a628bb602c4beb56d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6758447477551177852, guid: ce05a679430d94247bf71242d30f56ca, type: 3}
+  bullet: {fileID: 6758447477551177852, guid: c31b2b4f5d0584621a36267bd1d8526e, type: 3}
   barrel: {fileID: 2312521421383267921}
   ammoSpawn: {fileID: 2312521422004474127}
   target: {fileID: 0}
   player: {fileID: 0}
-  accuracy: 0.05
-  shootForce: 100
-  range: 500
+  accuracy: 0.01
+  shootForce: 80
+  range: 750
   targetInSight: 0
   smallestTargetSpeed: 60
-  fireRate: 0.15
+  fireRate: 2
 --- !u!1 &2312521422004474127
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2312521422004474127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -0}
+  m_LocalPosition: {x: 0, y: 2.5, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2312521423130971575}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 2312521422326868046}
   - component: {fileID: 2312521422326868045}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: Turret(Flak)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 676c5368a2f5d46c6ad6caab9e3725cc, type: 2}
+  - {fileID: 2100000, guid: 30493f23146e44117a0d761bfc278a7e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

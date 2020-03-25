@@ -15,14 +15,17 @@ public class TurretAI : MonoBehaviour {
 	public bool targetInSight;
 	public float smallestTargetSpeed;
 
+	float playerSpeed;
 	float counter;
 	public float fireRate;
 
 	void Start() {
 		target = GameObject.Find("AALeadPoint");
 		player = GameObject.Find("Ship");
+		playerSpeed = player.GetComponent<ShipMovement>().moveSpeed;
 	}
 
+	// JOSTAIN SYYSTÄ VÄLILLÄ TARGETINSIGHT -BOOL EI AKTIVOIDU KUN PYSYY PAIKALLAAN ALUKSELLA; EI AMMU
 	void Update() {
 
 		transform.LookAt(target.transform, Vector3.forward);
@@ -36,14 +39,15 @@ public class TurretAI : MonoBehaviour {
 		RaycastHit hit;
 		Vector3 fwd = barrel.transform.TransformDirection(Vector3.forward);
 		Debug.DrawRay(transform.position, fwd * range, Color.red, 0.01f);
-		if (Physics.Raycast(transform.position, fwd, out hit, range) && hit.transform.CompareTag("Player")) {
+		if (Physics.Raycast(transform.position, fwd, out hit, range) && hit.transform.CompareTag("Player") && !hit.transform.CompareTag("Torpedo")) {
 			targetInSight = true;
 		} else {
 			targetInSight = false;
 		}
 
-		if (player.GetComponent<ShipMovement>().moveSpeed > smallestTargetSpeed)
-			shootForce = player.GetComponent<ShipMovement>().moveSpeed;
+		if (playerSpeed > smallestTargetSpeed)
+			shootForce = playerSpeed;
+
 		if (counter >= fireRate && Vector3.Distance(transform.position, target.transform.position) < range && targetInSight) {
 			Shoot();
 			counter = 0;

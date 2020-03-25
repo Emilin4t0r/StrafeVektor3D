@@ -8,6 +8,7 @@ public class ShipMovement : MonoBehaviour {
 	public float maxSpeedF;
 	public float maxSpeedB;
 	public float turboSpeed;
+	public float turboCamShake;
 
 	float turboAccSpd;
 	float normalMaxSpeedF; // Store normal speed & acceleration values
@@ -68,7 +69,6 @@ public class ShipMovement : MonoBehaviour {
 			maxSpeedF = normalMaxSpeedF;
 			accelerationSpeed = normalAccSpd;
 		}
-
 		transform.Translate(0, 0, moveSpeed * Time.deltaTime);
 	}
 
@@ -90,5 +90,16 @@ public class ShipMovement : MonoBehaviour {
 		GUI.Label(new Rect(10, 70, 200, 20), "X = " + Xcoord);
 		GUI.Label(new Rect(10, 90, 200, 20), "Y = " + Ycoord);
 
+	}
+
+	private void OnCollisionEnter(Collision collision) {
+		if (collision.transform.CompareTag("Ground")) {
+			Debug.Log("Hej Hej");
+		}
+	}
+	private void OnTriggerEnter(Collider other) {
+		if (other.transform.CompareTag("Ground")) {
+			Debug.Log("Hej Hej");
+		}
 	}
 }

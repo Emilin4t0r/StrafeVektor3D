@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class AALeadPoint : MonoBehaviour {
 
-	ShipMovement ship;
+	ShipMovement shipM;
+	ShipStrafe shipS;
+	ShipHover shipH;
 
 	void Start() {
-		ship = GameObject.Find("Ship").GetComponent<ShipMovement>();
+		shipM = GameObject.Find("Ship").GetComponent<ShipMovement>();
+		shipS = GameObject.Find("Ship").GetComponent<ShipStrafe>();
+		shipH = GameObject.Find("Ship").GetComponent<ShipHover>();
 	}
 
 	void Update() {
-		transform.localPosition = new Vector3(0, -1, ship.moveSpeed);
+		transform.localPosition = new Vector3(shipS.moveSpeed, -2 + shipH.moveSpeed, shipM.moveSpeed + 4);
 	}
 }
