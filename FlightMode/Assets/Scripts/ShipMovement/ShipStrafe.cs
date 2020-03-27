@@ -5,11 +5,14 @@ using UnityEngine;
 public class ShipStrafe : MonoBehaviour {
 	public float moveSpeed;
 	public float accelerationSpeed = 2;
-	public float maxSpeed;
-
+	float maxSpeed;
+	public float origMaxSpeed;
+	public float gunshipTurnSpeed;
+	ShipMovement sm;
 	public GameObject playerShip;
-	void Start() {
 
+	void Start() {
+		sm = GameObject.Find("Ship").GetComponent<ShipMovement>();
 	}
 
 	void Update() {
@@ -25,7 +28,13 @@ public class ShipStrafe : MonoBehaviour {
 		changeRatePerSecond *= 50;
 		moveSpeed = Mathf.MoveTowards(moveSpeed, moveTowards, changeRatePerSecond);
 
-		transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+		if (sm.inGunshipMode) {
+			transform.Rotate(0, moveSpeed * Time.deltaTime, 0);
+			maxSpeed = gunshipTurnSpeed;
+		} else {
+			transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+			maxSpeed = origMaxSpeed;
+		}
 
 		playerShip.GetComponent<ShipRoll>().rollMultip = -moveSpeed;
 	}

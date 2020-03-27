@@ -6,10 +6,16 @@ public class ShipRoll : MonoBehaviour {
 	public float rollAmt;
 	public float rollMultip;
 	public GameObject player;
+	ShipMovement sm;
+
+	private void Start() {
+		sm = player.GetComponent<ShipMovement>();
+	}
 
 	void Update() {
-
-		rollAmt = player.GetComponent<ShipMovement>().Xcoord + rollMultip;
-		transform.localEulerAngles = new Vector3(0, 0, -rollAmt);
+		if (!sm.inGunshipMode) {
+			rollAmt = sm.Xcoord + rollMultip;
+			transform.localEulerAngles = new Vector3(0, 0, -rollAmt);
+		}
 	}
 }

@@ -22,7 +22,6 @@ public class TurretAI : MonoBehaviour {
 	void Start() {
 		target = GameObject.Find("AALeadPoint");
 		player = GameObject.Find("Ship");
-		playerSpeed = player.GetComponent<ShipMovement>().moveSpeed;
 	}
 
 	// JOSTAIN SYYSTÄ VÄLILLÄ TARGETINSIGHT -BOOL EI AKTIVOIDU KUN PYSYY PAIKALLAAN ALUKSELLA; EI AMMU
@@ -45,6 +44,7 @@ public class TurretAI : MonoBehaviour {
 			targetInSight = false;
 		}
 
+		playerSpeed = player.GetComponent<ShipMovement>().moveSpeed;
 		if (playerSpeed > smallestTargetSpeed)
 			shootForce = playerSpeed;
 

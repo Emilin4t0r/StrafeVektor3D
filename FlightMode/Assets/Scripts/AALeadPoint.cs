@@ -15,6 +15,6 @@ public class AALeadPoint : MonoBehaviour {
 	}
 
 	void Update() {
-		transform.localPosition = new Vector3(shipS.moveSpeed, -2 + shipH.moveSpeed, shipM.moveSpeed + 4);
+		transform.localPosition = new Vector3(shipS.moveSpeed, shipH.moveSpeed, shipM.moveSpeed + 4);
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour {
-	public GameObject playerShip;
+	public GameObject playerGun;
 	float cameraShake;
 	float shakeDuration = 0.1f;
 	float counter;
@@ -12,7 +12,7 @@ public class CameraShake : MonoBehaviour {
 	int oldShots;
 
 	private void Start() {
-		cannon = playerShip.GetComponent<Cannon>();
+		cannon = playerGun.GetComponent<Cannon>();
 		ship = GameObject.Find("Ship").GetComponent<ShipMovement>();
 	}
 

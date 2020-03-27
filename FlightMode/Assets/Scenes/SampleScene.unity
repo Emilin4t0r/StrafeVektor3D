@@ -212,12 +212,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8431854882860468314}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &594400812 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7099555651014896053, guid: 69743082197094f3cb8880dcd39033ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 8431854882860468314}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &601770537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -474,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18651d5f5116c4e47bebdd22a97a4c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShip: {fileID: 594400812}
+  playerGun: {fileID: 1742803068}
 --- !u!1001 &1233646594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,6 +612,12 @@ PrefabInstance:
       objectReference: {fileID: 194222596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 301907d6a2f534e509228e2f648eb3ba, type: 3}
+--- !u!1 &1742803068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4287785539068315305, guid: 69743082197094f3cb8880dcd39033ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 8431854882860468314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912871626
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,5 +875,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8431854882970473055, guid: 69743082197094f3cb8880dcd39033ce,
+        type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 963194225}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69743082197094f3cb8880dcd39033ce, type: 3}
