@@ -99,6 +99,7 @@
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\Camera\GunshipCamera.cs" />
+    <Compile Include="Assets\Scripts\GunshipMode.cs" />
     <Compile Include="Assets\Scripts\ShipMovement\ShipHover.cs" />
     <Compile Include="Assets\Scripts\ShipMovement\ShipMovement.cs" />
     <Compile Include="Assets\Scripts\ShipMovement\ShipStrafe.cs" />

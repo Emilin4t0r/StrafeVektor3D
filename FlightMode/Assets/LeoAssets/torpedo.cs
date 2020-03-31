@@ -18,7 +18,7 @@ public class torpedo : MonoBehaviour {
 
 	private void Update() {
 		transform.Rotate(torque, 0, torque);
-		if (flak && timer <= 0) {
+		if (flak && (timer <= 0 || timer >= Mathf.Infinity)) {
 			rb = transform.GetComponent<Rigidbody>();
 			timer = Vector3.Distance(transform.position, GameObject.Find("AALeadPoint").transform.position) / rb.velocity.magnitude;
 		}

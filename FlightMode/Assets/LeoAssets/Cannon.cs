@@ -7,9 +7,8 @@ public class Cannon : MonoBehaviour {
 	public GameObject gun;
 	public GameObject crosshairs;
 	public GameObject baseCrosshairPos;
-	public GameObject target;
-	ShipMovement sm;
 	public float castRange;
+	public float origCastRange;
 	LayerMask layerMask;
 
 	public float counter;
@@ -29,7 +28,6 @@ public class Cannon : MonoBehaviour {
 	public CannonType cannontype;
 
 	void Start() {
-		sm = GameObject.Find("Ship").GetComponent<ShipMovement>();
 		if (cannontype == CannonType.CnnBurst) {
 			fireRate = 0.05f;
 			accuracy = 0.01f;
@@ -56,12 +54,13 @@ public class Cannon : MonoBehaviour {
 
 		RaycastHit hit;
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
-		Debug.DrawRay(transform.position, fwd * 100, Color.green, 1f);
+		Debug.DrawRay(transform.position, fwd * 100, Color.green, 0.1f);
 		if (Physics.Raycast(transform.position, fwd, out hit, castRange, layerMask)) {
 			crosshairs.transform.position = hit.point;
 			crosshairs.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
 		} else {
 			crosshairs.transform.position = baseCrosshairPos.transform.position;
+			crosshairs.transform.localEulerAngles = new Vector3(0, 0, 0);
 		}
 
 		if (shotsFired >= magazine)
@@ -89,9 +88,6 @@ public class Cannon : MonoBehaviour {
 			} else {
 				counter2 += Time.deltaTime;
 			}
-		}
-		if (sm.inGunshipMode) {
-			transform.LookAt(target.transform.position);
 		}
 	}
 

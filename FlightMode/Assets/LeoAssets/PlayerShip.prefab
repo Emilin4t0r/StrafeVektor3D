@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 1694839346927502295}
   - component: {fileID: 1694839346927502293}
   - component: {fileID: 4224215569395104176}
-  - component: {fileID: 1694839346927502288}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -127,33 +126,6 @@ MonoBehaviour:
   rollAmt: 0
   rollMultip: 0
   player: {fileID: 0}
---- !u!114 &1694839346927502288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694839346927502298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55dc7767bd09a604c8a9545d61b07583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  torpedo: {fileID: 6758447477551177852, guid: bbc831f5a8f84ae46806d9856ea1646d, type: 3}
-  gun: {fileID: 665196496}
-  crosshairs: {fileID: 8255618872362060571}
-  baseCrosshairPos: {fileID: 1082485233016947455}
-  castRange: 200
-  counter: 0
-  reloading: 0
-  shotsFired: 0
-  fireRate: 0
-  accuracy: 0
-  reload: 0
-  magazine: 0
-  cameraShakeAmt: 0
-  thrust: 0
-  cannontype: 0
 --- !u!1 &1694839347246393801
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +437,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1694839346927502295}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7435209004080598546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7635122438420464656}
+  m_Layer: 0
+  m_Name: GunRotator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7635122438420464656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7435209004080598546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5980766728526703206}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8255618872362060571
 GameObject:

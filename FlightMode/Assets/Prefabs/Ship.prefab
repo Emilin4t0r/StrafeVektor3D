@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 56632992}
   - component: {fileID: 56632991}
   - component: {fileID: 56632990}
+  - component: {fileID: 503447538}
   m_Layer: 0
   m_Name: GunshipCamera
   m_TagString: Untagged
@@ -102,6 +103,19 @@ MonoBehaviour:
   cube: {fileID: 4603493127407992207}
   gunCam: {fileID: 0}
   range: 10000
+--- !u!114 &503447538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56632989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18651d5f5116c4e47bebdd22a97a4c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerGun: {fileID: 4287785539068315305}
 --- !u!1 &901910329
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +162,6 @@ MonoBehaviour:
   gun: {fileID: 8431854883866557887}
   crosshairs: {fileID: 545549942350078324}
   baseCrosshairPos: {fileID: 8792774431533492368}
-  target: {fileID: 4603493127407992207}
   castRange: 250
   counter: 0
   reloading: 0
@@ -259,6 +272,7 @@ GameObject:
   - component: {fileID: 8431854882970473055}
   - component: {fileID: 8431854882970473053}
   - component: {fileID: 8431854882970473042}
+  - component: {fileID: 194222601}
   m_Layer: 9
   m_Name: Ship
   m_TagString: Player
@@ -300,9 +314,6 @@ MonoBehaviour:
   maxSpeedB: 50
   turboSpeed: 150
   turboCamShake: 0.15
-  inGunshipMode: 0
-  mainCam: {fileID: 0}
-  gunshipCam: {fileID: 56632989}
   Xcoord: 0
   Ycoord: 0
 --- !u!114 &8431854882970473053
@@ -319,8 +330,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   accelerationSpeed: 2
+  origAccSpeed: 0
+  GunshipAccelerationSpeed: 0.5
+  maxSpeed: 0
   origMaxSpeed: 20
-  gunshipTurnSpeed: 50
+  gunshipTurnSpeed: 60
   playerShip: {fileID: 7099555651014896053}
 --- !u!114 &8431854882970473042
 MonoBehaviour:
@@ -337,6 +351,23 @@ MonoBehaviour:
   moveSpeed: 0
   accelerationSpeed: 2
   maxSpeed: 20
+--- !u!114 &194222601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431854882970473054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159ef91994d044ccb832ec282501022e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGunshipMode: 0
+  mainCam: {fileID: 0}
+  gunshipCam: {fileID: 56632989}
+  cannon: {fileID: 4287785539068315305}
+  cnnTarget: {fileID: 4603493127407992207}
 --- !u!1001 &8431854884313377391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -452,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 5940202158657822461, guid: 6a1dc66280c1e94419ec6ab02077ea21,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9990483
+      value: 0.99904823
       objectReference: {fileID: 0}
     - target: {fileID: 5940202158657822461, guid: 6a1dc66280c1e94419ec6ab02077ea21,
         type: 3}
@@ -476,10 +507,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1694839347246393801, guid: 6a1dc66280c1e94419ec6ab02077ea21,
         type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 665196496, guid: 6a1dc66280c1e94419ec6ab02077ea21, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
@@ -568,8 +595,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1694839346927502288, guid: 6a1dc66280c1e94419ec6ab02077ea21, type: 3}
+    - target: {fileID: 665196496, guid: 6a1dc66280c1e94419ec6ab02077ea21, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a1dc66280c1e94419ec6ab02077ea21, type: 3}
 --- !u!1 &7099555651014896053 stripped
 GameObject:

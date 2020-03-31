@@ -9,11 +9,13 @@ public class CameraShake : MonoBehaviour {
 	float counter;
 	Cannon cannon;
 	ShipMovement ship;
+	GunshipMode gunM;
 	int oldShots;
 
 	private void Start() {
 		cannon = playerGun.GetComponent<Cannon>();
 		ship = GameObject.Find("Ship").GetComponent<ShipMovement>();
+		gunM = GameObject.Find("Ship").GetComponent<GunshipMode>();
 	}
 
 	void Update() {
@@ -29,7 +31,11 @@ public class CameraShake : MonoBehaviour {
 				oldShots = 0;
 			}
 			if (cameraShake > 0) {
-				transform.localPosition = Random.insideUnitSphere * cameraShake;
+				if (gunM.inGunshipMode) {
+					transform.localPosition = Random.insideUnitSphere * (cameraShake / 2);
+				} else {
+					transform.localPosition = Random.insideUnitSphere * cameraShake;
+				}
 				if (counter > shakeDuration) {
 					counter = 0;
 					cameraShake = 0;
@@ -50,7 +56,11 @@ public class CameraShake : MonoBehaviour {
 			}
 
 			if (cameraShake > 0) {
-				transform.localPosition = Random.insideUnitSphere * cameraShake;
+				if (gunM.inGunshipMode) {
+					transform.localPosition = Random.insideUnitSphere * (cameraShake / 2);
+				} else {
+					transform.localPosition = Random.insideUnitSphere * cameraShake;
+				}
 			} else {
 				transform.localPosition = new Vector3(0, 0, 0);
 			}

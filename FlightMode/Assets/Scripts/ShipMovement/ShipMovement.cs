@@ -9,9 +9,7 @@ public class ShipMovement : MonoBehaviour {
 	public float maxSpeedB;
 	public float turboSpeed;
 	public float turboCamShake;
-	public bool inGunshipMode;
-	public GameObject mainCam;
-	public GameObject gunshipCam;
+	GunshipMode gsm;
 
 	float turboAccSpd;
 	float normalMaxSpeedF; // Store normal speed & acceleration values
@@ -32,6 +30,8 @@ public class ShipMovement : MonoBehaviour {
 		turboAccSpd = accelerationSpeed - accelerationSpeed / 2;
 		normalMaxSpeedF = maxSpeedF; // Store normal speed & acceleration values
 		normalAccSpd = accelerationSpeed;
+
+		gsm = transform.GetComponent<GunshipMode>();
 	}
 
 	void Update() {
@@ -47,18 +47,7 @@ public class ShipMovement : MonoBehaviour {
 		float y = transform.eulerAngles.y;                  // 	> Set Z rotation to 0
 		transform.localEulerAngles = new Vector3(x, y, 0);  // /
 
-		if (Input.GetKeyDown(KeyCode.E) && inGunshipMode == false) {
-			inGunshipMode = true;
-			gunshipCam.SetActive(true);
-			mainCam.SetActive(false);
-			transform.eulerAngles = new Vector3(0, 0, 0);
-		} else if (Input.GetKeyDown(KeyCode.E) && inGunshipMode == true) {
-			inGunshipMode = false;
-			gunshipCam.SetActive(false);
-			mainCam.SetActive(true);
-		}
-
-		if (!inGunshipMode) {
+		if (!gsm.inGunshipMode) {
 			RotateShipX();
 			RotateShipY();
 		}

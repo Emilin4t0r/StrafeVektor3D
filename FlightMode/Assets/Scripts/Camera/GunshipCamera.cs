@@ -6,9 +6,11 @@ public class GunshipCamera : MonoBehaviour {
 
 	public GameObject aim;
 	public GameObject cube;
+	public GameObject centerAim;
 	public Camera gunCam;
 	public float range;
-
+	Vector3 camMiddle;
+	public float flout;
 
 	// Start is called before the first frame update
 	void Start() {
@@ -25,10 +27,13 @@ public class GunshipCamera : MonoBehaviour {
 		RaycastHit hit;
 		Vector3 fwd = aim.transform.position - transform.position;
 		Debug.DrawRay(transform.position, fwd * range, Color.red, 0.01f);
-		if (Physics.Raycast(transform.position, fwd, out hit, range) && hit.transform.CompareTag("Ground")) {
+		if (Physics.Raycast(transform.position, fwd, out hit, range)) {
 			cube.transform.position = hit.point;
 		}
 
-		//transform.LookAt(cube.transform.position);
+		camMiddle = (aim.transform.position + centerAim.transform.position) / 2;
+		float dist = Vector3.Distance(aim.transform.position, centerAim.transform.position);
+		transform.LookAt(camMiddle);
+		Debug.Log(dist);
 	}
 }
