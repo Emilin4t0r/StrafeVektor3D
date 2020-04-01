@@ -33,7 +33,8 @@ public class GunshipCamera : MonoBehaviour {
 
 		camMiddle = (aim.transform.position + centerAim.transform.position) / 2;
 		float dist = Vector3.Distance(aim.transform.position, centerAim.transform.position);
-		transform.LookAt(camMiddle);
+		if (dist <= 45)
+			transform.LookAt(camMiddle);
 		Debug.Log(dist);
 	}
 }

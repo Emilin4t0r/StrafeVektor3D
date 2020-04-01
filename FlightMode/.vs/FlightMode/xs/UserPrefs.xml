@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{FCB392A3-6031-0F3E-EBFA-A44214F132CE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LeoAssets/torpedo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Camera/GunshipCamera.cs">
     <Files>
       <File FileName="Assets/Scripts/ShipMovement/ShipMovement.cs" Line="70" Column="31" />
       <File FileName="Assets/LeoAssets/Cannon.cs" Line="11" Column="29" />
@@ -12,7 +12,7 @@
       <File FileName="Assets/Scripts/V2/ShipRoll.cs" Line="20" Column="57" />
       <File FileName="Assets/Scripts/Camera/CameraController.cs" Line="17" Column="17" />
       <File FileName="Assets/Scripts/GunshipMode.cs" Line="24" Column="29" />
-      <File FileName="Assets/Scripts/Camera/GunshipCamera.cs" Line="35" Column="56" />
+      <File FileName="Assets/Scripts/Camera/GunshipCamera.cs" Line="36" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
