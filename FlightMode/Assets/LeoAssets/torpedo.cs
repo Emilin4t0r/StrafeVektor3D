@@ -18,11 +18,13 @@ public class torpedo : MonoBehaviour {
 
 	private void Update() {
 		transform.Rotate(torque, 0, torque);
-		if (flak && (timer <= 0 || timer >= Mathf.Infinity)) {
-			rb = transform.GetComponent<Rigidbody>();
-			timer = Vector3.Distance(transform.position, GameObject.Find("AALeadPoint").transform.position) / rb.velocity.magnitude;
-		}
+
 		if (flak) {
+			if (timer <= 0 || timer >= 100 /*to avoid false timer values*/) {
+				rb = transform.GetComponent<Rigidbody>();
+				timer = (Vector3.Distance(transform.position, GameObject.Find("AALeadPoint").transform.position) / rb.velocity.magnitude) + Random.Range(-0.3f, 0.3f);
+			}
+
 			if (counter >= timer) {
 				Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
 				Destroy(gameObject);

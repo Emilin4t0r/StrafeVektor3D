@@ -10,7 +10,6 @@ public class GunshipCamera : MonoBehaviour {
 	public Camera gunCam;
 	public float range;
 	Vector3 camMiddle;
-	public float flout;
 
 	// Start is called before the first frame update
 	void Start() {
@@ -35,6 +34,5 @@ public class GunshipCamera : MonoBehaviour {
 		float dist = Vector3.Distance(aim.transform.position, centerAim.transform.position);
 		if (dist <= 45)
 			transform.LookAt(camMiddle);
-		Debug.Log(dist);
 	}
 }

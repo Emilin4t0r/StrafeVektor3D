@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{FCB392A3-6031-0F3E-EBFA-A44214F132CE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Camera/GunshipCamera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ShipMovement/ShipDash.cs">
     <Files>
-      <File FileName="Assets/Scripts/ShipMovement/ShipMovement.cs" Line="70" Column="31" />
-      <File FileName="Assets/LeoAssets/Cannon.cs" Line="11" Column="29" />
-      <File FileName="Assets/Scripts/ShipMovement/ShipStrafe.cs" Line="32" Column="57" />
-      <File FileName="Assets/Scripts/TurretAI.cs" Line="41" Column="68" />
-      <File FileName="Assets/LeoAssets/torpedo.cs" Line="22" Column="18" />
-      <File FileName="Assets/Scripts/AALeadPoint.cs" Line="18" Column="58" />
+      <File FileName="Assets/Scripts/ShipMovement/ShipMovement.cs" Line="51" Column="28" />
+      <File FileName="Assets/LeoAssets/Cannon.cs" Line="48" Column="25" />
+      <File FileName="Assets/Scripts/ShipMovement/ShipStrafe.cs" Line="34" Column="25" />
+      <File FileName="Assets/Scripts/TurretAI.cs" Line="51" Column="11" />
+      <File FileName="Assets/LeoAssets/torpedo.cs" Line="25" Column="155" />
+      <File FileName="Assets/Scripts/AALeadPoint.cs" Line="18" Column="1" />
       <File FileName="Assets/Scripts/ShipMovement/ShipHover.cs" Line="27" Column="52" />
       <File FileName="Assets/Scripts/Camera/CameraShake.cs" Line="18" Column="29" />
-      <File FileName="Assets/Scripts/V2/ShipRoll.cs" Line="20" Column="57" />
-      <File FileName="Assets/Scripts/Camera/CameraController.cs" Line="17" Column="17" />
-      <File FileName="Assets/Scripts/GunshipMode.cs" Line="24" Column="29" />
-      <File FileName="Assets/Scripts/Camera/GunshipCamera.cs" Line="36" Column="14" />
+      <File FileName="Assets/Scripts/V2/ShipRoll.cs" Line="22" Column="3" />
+      <File FileName="Assets/Scripts/Camera/CameraController.cs" Line="21" Column="72" />
+      <File FileName="Assets/Scripts/GunshipMode.cs" Line="53" Column="29" />
+      <File FileName="Assets/Scripts/Camera/GunshipCamera.cs" Line="28" Column="33" />
+      <File FileName="Assets/Scripts/ShipMovement/ShipDash.cs" Line="19" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -9,6 +9,7 @@ public class ShipMovement : MonoBehaviour {
 	public float maxSpeedB;
 	public float turboSpeed;
 	public float turboCamShake;
+	public Rigidbody rb;
 	GunshipMode gsm;
 
 	float turboAccSpd;
@@ -47,7 +48,7 @@ public class ShipMovement : MonoBehaviour {
 		float y = transform.eulerAngles.y;                  // 	> Set Z rotation to 0
 		transform.localEulerAngles = new Vector3(x, y, 0);  // /
 
-		if (!gsm.inGunshipMode) {
+		if (!gsm.inGunshipMode || !gsm.isActiveAndEnabled) {
 			RotateShipX();
 			RotateShipY();
 		}
@@ -74,7 +75,13 @@ public class ShipMovement : MonoBehaviour {
 			maxSpeedF = normalMaxSpeedF;
 			accelerationSpeed = normalAccSpd;
 		}
+
 		transform.Translate(0, 0, moveSpeed * Time.deltaTime);
+
+		if (rb.velocity.magnitude < .01) {
+			rb.velocity = Vector3.zero;
+			rb.angularVelocity = Vector3.zero;
+		}
 	}
 
 	void RotateShipX() {
@@ -94,17 +101,5 @@ public class ShipMovement : MonoBehaviour {
 		GUI.Label(new Rect(10, 50, 100, 20), "Speed: " + moveSpeed);
 		GUI.Label(new Rect(10, 70, 200, 20), "X = " + Xcoord);
 		GUI.Label(new Rect(10, 90, 200, 20), "Y = " + Ycoord);
-
-	}
-
-	private void OnCollisionEnter(Collision collision) {
-		if (collision.transform.CompareTag("Ground")) {
-			Debug.Log("Hej Hej");
-		}
-	}
-	private void OnTriggerEnter(Collider other) {
-		if (other.transform.CompareTag("Ground")) {
-			Debug.Log("Hej Hej");
-		}
 	}
 }

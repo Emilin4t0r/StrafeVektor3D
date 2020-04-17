@@ -41,10 +41,10 @@ public class Cannon : MonoBehaviour {
 			magazine = 8;
 			cameraShakeAmt = 0.4f;
 		} else if (cannontype == CannonType.CnnAuto) {
-			fireRate = 0.02f;
-			accuracy = 0.025f;
+			fireRate = 0.03f;
+			accuracy = 0.03f;
 			reload = 3f;
-			magazine = 30;
+			magazine = 45;
 			cameraShakeAmt = 0.3f;
 		}
 		layerMask = LayerMask.GetMask("Default");

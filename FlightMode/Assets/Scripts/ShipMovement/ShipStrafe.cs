@@ -12,6 +12,9 @@ public class ShipStrafe : MonoBehaviour {
 	public float gunshipTurnSpeed;
 	public GameObject playerShip;
 
+	float dashCounter;
+	bool dashing;
+
 	void Start() {
 		origAccSpeed = accelerationSpeed;
 	}
@@ -26,11 +29,26 @@ public class ShipStrafe : MonoBehaviour {
 		if (Input.GetKey(KeyCode.D)) {
 			moveTowards = maxSpeed;
 		}
-		changeRatePerSecond *= 50;
-		moveSpeed = Mathf.MoveTowards(moveSpeed, moveTowards, changeRatePerSecond);
 
+		if (dashing) {
+			if (dashCounter > 0.5f) {
+				dashing = false;
+				dashCounter = 0;
+			} else {
+				dashCounter += Time.deltaTime;
+			}
+		}
+
+		changeRatePerSecond *= 50;
+		if (!dashing)
+			moveSpeed = Mathf.MoveTowards(moveSpeed, moveTowards, changeRatePerSecond);
 		transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
 
 		playerShip.GetComponent<ShipRoll>().rollMultip = -moveSpeed;
+	}
+
+	public void Dash(float force) {
+		dashing = true;
+		moveSpeed = force;
 	}
 }
