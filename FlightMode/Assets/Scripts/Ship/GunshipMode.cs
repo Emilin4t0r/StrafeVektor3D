@@ -12,7 +12,6 @@ public class GunshipMode : MonoBehaviour {
 	public GameObject playerShip;
 	ShipStrafe strf;
 
-
 	void Start() {
 		strf = transform.GetComponent<ShipStrafe>();
 	}

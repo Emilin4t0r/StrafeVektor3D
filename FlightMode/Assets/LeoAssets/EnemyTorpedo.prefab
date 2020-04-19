@@ -201,11 +201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112a5d87f6e53ae48bb04413bf672998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   torque: 20
   particle: {fileID: 7070465220517492653, guid: 71002e7b3afae41d9a2c899e1919344b,
     type: 3}
   flak: 0
+  rb: {fileID: 0}
+  damage: 10
 --- !u!135 &1487957216305655833
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Torpedo
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX

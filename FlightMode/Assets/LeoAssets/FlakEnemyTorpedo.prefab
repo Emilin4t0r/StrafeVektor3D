@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1642278171418781785}
   - component: {fileID: 5041219173527622816}
   - component: {fileID: 1209848241556170331}
-  - component: {fileID: 2937851347053727217}
+  - component: {fileID: 3929801685547896769}
   - component: {fileID: 1487957216305655833}
   m_Layer: 10
   m_Name: FlakEnemyTorpedo
@@ -189,7 +189,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &2937851347053727217
+--- !u!114 &3929801685547896769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,15 +198,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6758447477551177852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 112a5d87f6e53ae48bb04413bf672998, type: 3}
+  m_Script: {fileID: 11500000, guid: 37f2b77bde28e49f8ac096cdcf878f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torque: 20
+  torque: 10
   particle: {fileID: 7070465220517492653, guid: 34dedecf443a0446f871876505369800,
     type: 3}
-  flak: 1
   rb: {fileID: 0}
-  ship: {fileID: 0}
+  damageMultip: 0.15
+  explosionRadius: 100
 --- !u!135 &1487957216305655833
 SphereCollider:
   m_ObjectHideFlags: 0

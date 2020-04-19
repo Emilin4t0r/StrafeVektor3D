@@ -64,8 +64,11 @@
   <ItemGroup>
     <Compile Include="Assets\LeoAssets\cameraSmooth.cs" />
     <Compile Include="Assets\LeoAssets\Cannon.cs" />
+    <Compile Include="Assets\LeoAssets\enemyTorpedo.cs" />
+    <Compile Include="Assets\LeoAssets\flakTorpedo.cs" />
     <Compile Include="Assets\LeoAssets\FlyingController.cs" />
     <Compile Include="Assets\LeoAssets\particleControl.cs" />
+    <Compile Include="Assets\LeoAssets\playerTorpedo.cs" />
     <Compile Include="Assets\LeoAssets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\LeoAssets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\LeoAssets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
@@ -94,16 +97,16 @@
     <Compile Include="Assets\LeoAssets\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
     <Compile Include="Assets\LeoAssets\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
     <Compile Include="Assets\LeoAssets\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
-    <Compile Include="Assets\LeoAssets\torpedo.cs" />
     <Compile Include="Assets\Scripts\AALeadPoint.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\Camera\GunshipCamera.cs" />
-    <Compile Include="Assets\Scripts\GunshipMode.cs" />
-    <Compile Include="Assets\Scripts\ShipMovement\ShipDash.cs" />
-    <Compile Include="Assets\Scripts\ShipMovement\ShipHover.cs" />
-    <Compile Include="Assets\Scripts\ShipMovement\ShipMovement.cs" />
-    <Compile Include="Assets\Scripts\ShipMovement\ShipStrafe.cs" />
+    <Compile Include="Assets\Scripts\Ship\GunshipMode.cs" />
+    <Compile Include="Assets\Scripts\Ship\ShipDash.cs" />
+    <Compile Include="Assets\Scripts\Ship\ShipHover.cs" />
+    <Compile Include="Assets\Scripts\Ship\ShipManager.cs" />
+    <Compile Include="Assets\Scripts\Ship\ShipMovement.cs" />
+    <Compile Include="Assets\Scripts\Ship\ShipStrafe.cs" />
     <Compile Include="Assets\Scripts\TurretAI.cs" />
     <Compile Include="Assets\Scripts\V2\PlayerV2.cs" />
     <Compile Include="Assets\Scripts\V2\ShipRoll.cs" />

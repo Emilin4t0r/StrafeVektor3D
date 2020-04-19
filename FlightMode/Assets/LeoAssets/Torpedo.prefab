@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1642278171418781785}
   - component: {fileID: 5041219173527622816}
   - component: {fileID: 1209848241556170331}
-  - component: {fileID: 2937851347053727217}
+  - component: {fileID: -1078814656506198795}
   - component: {fileID: 1487957216305655833}
   m_Layer: 8
   m_Name: Torpedo
@@ -189,7 +189,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &2937851347053727217
+--- !u!114 &-1078814656506198795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,13 +198,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6758447477551177852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 112a5d87f6e53ae48bb04413bf672998, type: 3}
+  m_Script: {fileID: 11500000, guid: 095c47e9c5dc14b608d7de8bddbaa040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   torque: 20
   particle: {fileID: 7070465220517492653, guid: bbf18667e5a1d204788f98695b15d148,
     type: 3}
+  damageMultip: 1
+  explosionRadius: 20
 --- !u!135 &1487957216305655833
 SphereCollider:
   m_ObjectHideFlags: 0

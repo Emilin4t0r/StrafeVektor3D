@@ -13,7 +13,7 @@ public class ShipStrafe : MonoBehaviour {
 	public GameObject playerShip;
 
 	float dashCounter;
-	bool dashing;
+	public bool dashing;
 
 	void Start() {
 		origAccSpeed = accelerationSpeed;

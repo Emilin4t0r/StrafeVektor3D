@@ -14,6 +14,7 @@ public class TurretAI : MonoBehaviour {
 	public float range;
 	public bool targetInSight;
 	public float smallestTargetSpeed;
+	public float health;
 
 	float playerSpeed;
 	float counter;
@@ -54,6 +55,10 @@ public class TurretAI : MonoBehaviour {
 		} else {
 			counter += Time.deltaTime;
 		}
+
+		if (health < 0) {
+			Destroy(gameObject.transform.parent.gameObject);
+		}
 	}
 
 	void Shoot() {
@@ -63,5 +68,10 @@ public class TurretAI : MonoBehaviour {
 		GameObject torp = Instantiate(bullet, ammoSpawn.transform.position, ammoSpawn.transform.rotation);
 		Rigidbody tRb = torp.GetComponent<Rigidbody>();
 		tRb.AddForce(fwd * shootForce, ForceMode.Impulse);
+	}
+
+	public void TakeDamage(float damage) {
+		health -= damage;
+		print(transform.parent.name + " took " + damage + " damage, health now " + health);
 	}
 }
