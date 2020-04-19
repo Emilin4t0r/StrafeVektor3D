@@ -56,7 +56,7 @@ public class TurretAI : MonoBehaviour {
 			counter += Time.deltaTime;
 		}
 
-		if (health < 0) {
+		if (health <= 0) {
 			Destroy(gameObject.transform.parent.gameObject);
 		}
 	}

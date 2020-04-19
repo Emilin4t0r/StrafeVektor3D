@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{FCB392A3-6031-0F3E-EBFA-A44214F132CE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LeoAssets/playerTorpedo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LeoAssets/Cannon.cs">
     <Files>
-      <File FileName="Assets/LeoAssets/playerTorpedo.cs" Line="28" Column="37" />
+      <File FileName="Assets/LeoAssets/playerTorpedo.cs" Line="18" Column="44" />
       <File FileName="Assets/LeoAssets/enemyTorpedo.cs" Line="9" Column="17" />
       <File FileName="Assets/LeoAssets/flakTorpedo.cs" Line="44" Column="12" />
-      <File FileName="Assets/LeoAssets/Cannon.cs" Line="95" Column="28" />
+      <File FileName="Assets/LeoAssets/Cannon.cs" Line="47" Column="26" />
       <File FileName="Assets/Scripts/Camera/CameraShake.cs" Line="7" Column="2" />
-      <File FileName="Assets/Scripts/Ship/GunshipMode.cs" Line="13" Column="18" />
-      <File FileName="Assets/Scripts/TurretAI.cs" Line="75" Column="48" />
+      <File FileName="Assets/Scripts/TurretAI.cs" Line="59" Column="16" />
       <File FileName="Assets/Scripts/Ship/ShipManager.cs" Line="14" Column="27" />
-      <File FileName="Assets/Scripts/Ship/ShipMovement.cs" Line="101" Column="27" />
+      <File FileName="Assets/Scripts/Ship/GunshipMode.cs" Line="17" Column="1" />
+      <File FileName="Assets/Scripts/Ship/ShipMovement.cs" Line="51" Column="18" />
+      <File FileName="Assets/Scripts/Ship/ShipDash.cs" Line="27" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

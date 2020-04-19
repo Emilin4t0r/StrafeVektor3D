@@ -21,6 +21,8 @@ public class Cannon : MonoBehaviour {
 	public float reload;
 	public int magazine;
 	public float cameraShakeAmt;
+	public float damageMultiplier;
+	public float explosionRadius;
 
 	public float thrust;
 
@@ -34,18 +36,24 @@ public class Cannon : MonoBehaviour {
 			reload = 0.5f;
 			magazine = 3;
 			cameraShakeAmt = 0.2f;
+			damageMultiplier = 1.25f;
+			explosionRadius = 15f;
 		} else if (cannontype == CannonType.CnnSemi) {
 			fireRate = 0.25f;
 			accuracy = 0.005f;
 			reload = 1f;
 			magazine = 8;
 			cameraShakeAmt = 0.4f;
+			damageMultiplier = 1.5f;
+			explosionRadius = 20;
 		} else if (cannontype == CannonType.CnnAuto) {
 			fireRate = 0.03f;
 			accuracy = 0.03f;
 			reload = 3f;
 			magazine = 45;
 			cameraShakeAmt = 0.3f;
+			damageMultiplier = 1;
+			explosionRadius = 10;
 		}
 		layerMask = LayerMask.GetMask("Default");
 	}

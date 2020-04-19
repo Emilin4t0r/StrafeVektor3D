@@ -7,22 +7,25 @@ public class playerTorpedo : MonoBehaviour {
 	public GameObject particle;
 	TurretAI tAI;
 	GameObject enemy;
+	Cannon cannon;
 
 	public float damageMultip;
 	public float explosionRadius;
 
-	void Update() {
-
+	private void Start() {
+		cannon = GameObject.Find("PAC-Howitzer").GetComponent<Cannon>();
+		damageMultip = cannon.damageMultiplier;
+		explosionRadius = cannon.explosionRadius;
 	}
 
 	private void OnCollisionEnter(Collision collision) {
 		GameObject explosion = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
 
 		Collider[] colliders = Physics.OverlapSphere(explosion.transform.position, explosionRadius); //	\
-		for (int i = 0; i < colliders.Length; i++) { //													 \ 
-			if (colliders[i].gameObject.transform.CompareTag("Enemy")) { //								  ) Find a random enemy within the radius
-				enemy = colliders[i].gameObject; //														 /
-			} // 																						/
+		for (int i = 0; i < colliders.Length; i++) { //										 \ 
+			if (colliders[i].gameObject.transform.CompareTag("Enemy")) { //						  ) Find a random enemy within the radius
+				enemy = colliders[i].gameObject; //										 /
+			} // 																	/
 		}
 		if (enemy != null) {
 			tAI = enemy.transform.GetChild(0).GetComponent<TurretAI>();

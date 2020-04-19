@@ -54,10 +54,16 @@ public class ShipMovement : MonoBehaviour {
 		}
 
 		//Acceleration for moving forward/backward
-		float moveTowards = 0;
+		float moveTowards;
+		if (!gsm.inGunshipMode) {
+			moveTowards = 0;
+		} else {
+			moveTowards = 50;
+		}
+
 		float changeRatePerSecond = 1 / accelerationSpeed * Time.deltaTime;
 
-		if (Input.GetKey(KeyCode.S)) {
+		if (Input.GetKey(KeyCode.S) && !gsm.inGunshipMode) {
 			moveTowards = -maxSpeedB;
 		} else
 		if (Input.GetKey(KeyCode.W)) {

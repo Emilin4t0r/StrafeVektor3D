@@ -12,15 +12,19 @@ public class ShipDash : MonoBehaviour {
 	public float doubleTapTime;
 	public float dashForce;
 	ShipStrafe ss;
+	GunshipMode gsm;
 
 	private void Start() {
 		ss = transform.GetComponent<ShipStrafe>();
+		gsm = transform.GetComponent<GunshipMode>();
 	}
 
 	void Update() {
 
-		DashRight();
-		DashLeft();
+		if (!gsm.inGunshipMode) {
+			DashRight();
+			DashLeft();
+		}
 
 	}
 
