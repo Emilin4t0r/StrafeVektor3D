@@ -23,14 +23,15 @@ public class Cannon : MonoBehaviour {
 	public float cameraShakeAmt;
 	public float damageMultiplier;
 	public float explosionRadius;
+	public int shotsInShotgun;
 
 	public float thrust;
 
-	public enum CannonType { CnnSemi, CnnBurst, CnnAuto, };
+	public enum CannonType { Semi, Burst, Auto, Shotgun };
 	public CannonType cannontype;
 
 	void Start() {
-		if (cannontype == CannonType.CnnBurst) {
+		if (cannontype == CannonType.Burst) {
 			fireRate = 0.05f;
 			accuracy = 0.01f;
 			reload = 0.5f;
@@ -38,7 +39,7 @@ public class Cannon : MonoBehaviour {
 			cameraShakeAmt = 0.2f;
 			damageMultiplier = 1.25f;
 			explosionRadius = 15f;
-		} else if (cannontype == CannonType.CnnSemi) {
+		} else if (cannontype == CannonType.Semi) {
 			fireRate = 0.25f;
 			accuracy = 0.005f;
 			reload = 1f;
@@ -46,7 +47,7 @@ public class Cannon : MonoBehaviour {
 			cameraShakeAmt = 0.4f;
 			damageMultiplier = 1.5f;
 			explosionRadius = 20;
-		} else if (cannontype == CannonType.CnnAuto) {
+		} else if (cannontype == CannonType.Auto) {
 			fireRate = 0.03f;
 			accuracy = 0.03f;
 			reload = 3f;
@@ -54,6 +55,15 @@ public class Cannon : MonoBehaviour {
 			cameraShakeAmt = 0.3f;
 			damageMultiplier = 1;
 			explosionRadius = 10;
+		} else if (cannontype == CannonType.Shotgun) {
+			fireRate = 0;
+			accuracy = 0.06f;
+			reload = 1f;
+			cameraShakeAmt = 0.5f;
+			damageMultiplier = 1;
+			explosionRadius = 15f;
+			shotsInShotgun = 10;
+			magazine = shotsInShotgun;
 		}
 		layerMask = LayerMask.GetMask("Default");
 	}
@@ -76,9 +86,16 @@ public class Cannon : MonoBehaviour {
 
 		if (!reloading) {
 			if (counter > fireRate) {
-				if (cannontype == CannonType.CnnSemi) {
+				if (cannontype == CannonType.Semi) {
 					if (Input.GetKeyDown(KeyCode.Mouse0)) {
 						Shoot();
+					}
+				} else if (cannontype == CannonType.Shotgun) {
+					if (Input.GetKeyDown(KeyCode.Mouse0)) {
+						print("SHOT");
+						for (int i = 0; i < shotsInShotgun; i++) {
+							Shoot();
+						}
 					}
 				} else {
 					if (Input.GetKey(KeyCode.Mouse0)) {
@@ -89,7 +106,7 @@ public class Cannon : MonoBehaviour {
 				counter += Time.deltaTime;
 			}
 		} else {
-			if (counter2 > reload) {
+			if (counter2 >= reload) {
 				counter2 = 0;
 				shotsFired = 0;
 				reloading = false;

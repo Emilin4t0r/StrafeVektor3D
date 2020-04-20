@@ -3023,8 +3023,9 @@ MonoBehaviour:
   cameraShakeAmt: 0.2
   damageMultiplier: 0
   explosionRadius: 0
+  shotsInShotgun: 0
   thrust: 250
-  cannontype: 2
+  cannontype: 3
 --- !u!1 &8635472878953256317
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,18 +9,18 @@ public class CameraShake : MonoBehaviour {
 	float counter;
 	Cannon cannon;
 	ShipMovement ship;
-	GunshipMode gunM;
+	GunshipMode gsm;
 	int oldShots;
 
 	private void Start() {
 		cannon = playerGun.GetComponent<Cannon>();
 		ship = GameObject.Find("Ship").GetComponent<ShipMovement>();
-		gunM = GameObject.Find("Ship").GetComponent<GunshipMode>();
+		gsm = GameObject.Find("Ship").GetComponent<GunshipMode>();
 	}
 
 	void Update() {
 
-		if (cannon.cannontype == Cannon.CannonType.CnnSemi) {
+		if (cannon.cannontype == Cannon.CannonType.Semi) {
 			if (Input.GetKeyDown(KeyCode.Mouse0) && !cannon.reloading && oldShots < cannon.shotsFired) {
 				oldShots = cannon.shotsFired;
 				cameraShake = cannon.cameraShakeAmt;
@@ -31,7 +31,29 @@ public class CameraShake : MonoBehaviour {
 				oldShots = 0;
 			}
 			if (cameraShake > 0) {
-				if (gunM.inGunshipMode) {
+				if (gsm.inGunshipMode) {
+					transform.localPosition = Random.insideUnitSphere * (cameraShake / 2);
+				} else {
+					transform.localPosition = Random.insideUnitSphere * cameraShake;
+				}
+				if (counter > shakeDuration) {
+					counter = 0;
+					cameraShake = 0;
+				} else {
+					counter += Time.deltaTime;
+				}
+			} else {
+				transform.localPosition = new Vector3(0, 0, 0);
+			}
+
+		} else if (cannon.cannontype == Cannon.CannonType.Shotgun) {
+			if (Input.GetKeyDown(KeyCode.Mouse0) && !cannon.reloading) {
+				cameraShake = cannon.cameraShakeAmt;
+			} else if (Input.GetKey(KeyCode.LeftControl)) {
+				cameraShake = ship.turboCamShake;
+			}
+			if (cameraShake > 0) {
+				if (gsm.inGunshipMode) {
 					transform.localPosition = Random.insideUnitSphere * (cameraShake / 2);
 				} else {
 					transform.localPosition = Random.insideUnitSphere * cameraShake;
@@ -56,7 +78,7 @@ public class CameraShake : MonoBehaviour {
 			}
 
 			if (cameraShake > 0) {
-				if (gunM.inGunshipMode) {
+				if (gsm.inGunshipMode) {
 					transform.localPosition = Random.insideUnitSphere * (cameraShake / 2);
 				} else {
 					transform.localPosition = Random.insideUnitSphere * cameraShake;
