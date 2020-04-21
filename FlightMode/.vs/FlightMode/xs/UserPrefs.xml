@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{FCB392A3-6031-0F3E-EBFA-A44214F132CE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Misc/Controls.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ship/ShipDash.cs">
     <Files>
       <File FileName="Assets/Scripts/Misc/Controls.cs" Line="24" Column="2" />
       <File FileName="Assets/LeoAssets/Cannon.cs" Line="92" Column="31" />
