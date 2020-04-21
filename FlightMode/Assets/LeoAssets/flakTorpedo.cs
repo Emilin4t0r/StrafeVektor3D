@@ -42,7 +42,7 @@ public class flakTorpedo : MonoBehaviour {
 		float hitDist = Vector3.Distance(ship.transform.position, transform.position);
 		if (hitDist <= explosionRadius) {
 			float damage = (explosionRadius - hitDist) * damageMultip;
-			sm.TakeDamage(Mathf.RoundToInt(damage));
+			sm.TakeDamage(damage);
 		}
 		Destroy(gameObject);
 	}

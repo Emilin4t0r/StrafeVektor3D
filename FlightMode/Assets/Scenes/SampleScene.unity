@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 8431854882970473043}
   - component: {fileID: 194222602}
   - component: {fileID: 194222603}
+  - component: {fileID: 194222604}
   m_Layer: 9
   m_Name: Ship
   m_TagString: Player
@@ -337,7 +338,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a31f80d48984f3b8fc958e58ad3cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+--- !u!114 &194222604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194222596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5594446f2990641c7ab50992163420af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: 3
+  damageResistance: 0
+  strength: 0
+  armorWeight: 0
 --- !u!1 &267722499
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &305418145
 Transform:
   m_ObjectHideFlags: 0
@@ -1271,7 +1287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2072534452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3089,7 +3105,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194222596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159ef91994d044ccb832ec282501022e, type: 3}
   m_Name: 

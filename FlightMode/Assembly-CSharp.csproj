@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\Enemies\TurretAI.cs" />
     <Compile Include="Assets\Scripts\Misc\Controls.cs" />
     <Compile Include="Assets\Scripts\Ship\GunshipMode.cs" />
+    <Compile Include="Assets\Scripts\Ship\ShipArmor.cs" />
     <Compile Include="Assets\Scripts\Ship\ShipDash.cs" />
     <Compile Include="Assets\Scripts\Ship\ShipHover.cs" />
     <Compile Include="Assets\Scripts\Ship\ShipManager.cs" />

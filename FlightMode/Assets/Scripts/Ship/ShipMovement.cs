@@ -12,6 +12,7 @@ public class ShipMovement : MonoBehaviour {
 	public Rigidbody rb;
 	GunshipMode gsm;
 	Controls controls;
+	ShipArmor armor;
 
 	float turboAccSpd;
 	float normalMaxSpeedF; // Store normal speed & acceleration values
@@ -29,12 +30,13 @@ public class ShipMovement : MonoBehaviour {
 		center[0] = Screen.width / 2;
 		center[1] = Screen.height / 2;
 
-		turboAccSpd = accelerationSpeed - accelerationSpeed / 2;
-		normalMaxSpeedF = maxSpeedF; // Store normal speed & acceleration values
-		normalAccSpd = accelerationSpeed;
-
 		gsm = transform.GetComponent<GunshipMode>();
 		controls = FindObjectOfType<Controls>();
+		armor = transform.GetComponent<ShipArmor>();
+
+		turboAccSpd = accelerationSpeed / 2;
+		normalMaxSpeedF = maxSpeedF; // Store normal speed & acceleration values
+		normalAccSpd = accelerationSpeed * armor.armorWeight;
 	}
 
 	void Update() {

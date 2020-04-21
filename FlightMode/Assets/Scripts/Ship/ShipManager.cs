@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShipManager : MonoBehaviour {
-	public int health;
+	int health;
 
-	public void TakeDamage(int damage) {
-		health -= damage;
+	ShipArmor armor;
+
+	void Start() {
+		armor = transform.GetComponent<ShipArmor>();
+		health = armor.strength;
+	}
+
+	public void TakeDamage(float damage) {
+		int intdamage = Mathf.RoundToInt(damage / armor.damageResistance);
+		health -= intdamage;
 		//print("Player took " + damage + " damage, HP now " + health);
 	}
 
