@@ -6,19 +6,20 @@ public class ShipHover : MonoBehaviour {
 	public float moveSpeed;
 	public float accelerationSpeed = 2;
 	public float maxSpeed;
+	Controls controls;
 
 	void Start() {
-
+		controls = FindObjectOfType<Controls>();
 	}
 
 	void Update() {
 		float moveTowards = 0;
 		float changeRatePerSecond = 1 / accelerationSpeed * Time.deltaTime;
 
-		if (Input.GetKey(KeyCode.Space)) {
+		if (controls.Up("hold")) {
 			moveTowards = maxSpeed;
 		} else
-		if (Input.GetKey(KeyCode.LeftShift)) {
+		if (controls.Down("hold")) {
 			moveTowards = -maxSpeed;
 		}
 		changeRatePerSecond *= 50;

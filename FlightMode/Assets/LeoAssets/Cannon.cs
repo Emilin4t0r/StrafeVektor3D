@@ -10,6 +10,7 @@ public class Cannon : MonoBehaviour {
 	public float castRange;
 	public float origCastRange;
 	LayerMask layerMask;
+	Controls controls;
 
 	public float counter;
 	public bool reloading;
@@ -56,16 +57,17 @@ public class Cannon : MonoBehaviour {
 			damageMultiplier = 1;
 			explosionRadius = 10;
 		} else if (cannontype == CannonType.Shotgun) {
-			fireRate = 0;
+			fireRate = 0.05f;
 			accuracy = 0.06f;
 			reload = 1f;
-			cameraShakeAmt = 0.5f;
+			cameraShakeAmt = 1f;
 			damageMultiplier = 1;
 			explosionRadius = 15f;
 			shotsInShotgun = 10;
-			magazine = shotsInShotgun;
+			magazine = 2;
 		}
 		layerMask = LayerMask.GetMask("Default");
+		controls = FindObjectOfType<Controls>();
 	}
 
 	void Update() {
@@ -87,18 +89,15 @@ public class Cannon : MonoBehaviour {
 		if (!reloading) {
 			if (counter > fireRate) {
 				if (cannontype == CannonType.Semi) {
-					if (Input.GetKeyDown(KeyCode.Mouse0)) {
+					if (controls.Fire("down")) {
 						Shoot();
 					}
 				} else if (cannontype == CannonType.Shotgun) {
-					if (Input.GetKeyDown(KeyCode.Mouse0)) {
-						print("SHOT");
-						for (int i = 0; i < shotsInShotgun; i++) {
-							Shoot();
-						}
+					if (controls.Fire("down")) {
+						ShootShotgun(shotsInShotgun);
 					}
 				} else {
-					if (Input.GetKey(KeyCode.Mouse0)) {
+					if (controls.Fire("hold")) {
 						Shoot();
 					}
 				}
@@ -134,4 +133,17 @@ public class Cannon : MonoBehaviour {
 		counter = 0;
 	}
 
+	void ShootShotgun(int shots) {
+		for (int i = 0; i < shots; i++) {
+			Vector3 deviation3D = Random.insideUnitCircle * accuracy;
+			Quaternion rot = Quaternion.LookRotation(Vector3.forward + deviation3D);
+			Vector3 fwd = transform.rotation * rot * Vector3.forward;
+
+			GameObject torp = Instantiate(torpedo, gun.transform.position, gun.transform.rotation);
+			Rigidbody tRb = torp.GetComponent<Rigidbody>();
+			tRb.AddForce(fwd * thrust, ForceMode.Impulse);
+		}
+		shotsFired++;
+		counter = 0;
+	}
 }

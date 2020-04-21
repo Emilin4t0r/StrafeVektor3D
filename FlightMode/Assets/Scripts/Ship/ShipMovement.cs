@@ -11,6 +11,7 @@ public class ShipMovement : MonoBehaviour {
 	public float turboCamShake;
 	public Rigidbody rb;
 	GunshipMode gsm;
+	Controls controls;
 
 	float turboAccSpd;
 	float normalMaxSpeedF; // Store normal speed & acceleration values
@@ -33,6 +34,7 @@ public class ShipMovement : MonoBehaviour {
 		normalAccSpd = accelerationSpeed;
 
 		gsm = transform.GetComponent<GunshipMode>();
+		controls = FindObjectOfType<Controls>();
 	}
 
 	void Update() {
@@ -63,10 +65,10 @@ public class ShipMovement : MonoBehaviour {
 
 		float changeRatePerSecond = 1 / accelerationSpeed * Time.deltaTime;
 
-		if (Input.GetKey(KeyCode.S) && !gsm.inGunshipMode) {
+		if (controls.Back("hold") && !gsm.inGunshipMode) {
 			moveTowards = -maxSpeedB;
 		} else
-		if (Input.GetKey(KeyCode.W)) {
+		if (controls.Forward("hold")) {
 			moveTowards = maxSpeedF;
 		}
 		changeRatePerSecond *= 50;
@@ -74,7 +76,7 @@ public class ShipMovement : MonoBehaviour {
 
 		//Turbo
 
-		if (Input.GetKey(KeyCode.LeftControl)) {
+		if (controls.Boost("hold")) {
 			maxSpeedF = turboSpeed;
 			accelerationSpeed = turboAccSpd;
 		} else {

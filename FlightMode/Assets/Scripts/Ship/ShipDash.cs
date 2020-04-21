@@ -13,10 +13,12 @@ public class ShipDash : MonoBehaviour {
 	public float dashForce;
 	ShipStrafe ss;
 	GunshipMode gsm;
+	Controls controls;
 
 	private void Start() {
 		ss = transform.GetComponent<ShipStrafe>();
 		gsm = transform.GetComponent<GunshipMode>();
+		controls = FindObjectOfType<Controls>();
 	}
 
 	void Update() {
@@ -31,7 +33,7 @@ public class ShipDash : MonoBehaviour {
 	#region Dash_Functions
 	void DashLeft() {
 		if (useTapTimerLeft) {
-			if (doubleTapTimer <= doubleTapTime && Input.GetKeyDown(KeyCode.A) && !dashUsed) { // Second tap
+			if (doubleTapTimer <= doubleTapTime && controls.Left("down") && !dashUsed) { // Second tap
 				ss.Dash(-dashForce);
 				dashUsed = true;
 				useTapTimerLeft = false;
@@ -44,7 +46,7 @@ public class ShipDash : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.A) && !useTapTimerLeft) { // First tap
+		if (controls.Left("down") && !useTapTimerLeft) { // First tap
 			useTapTimerLeft = true;
 		}
 
@@ -60,7 +62,7 @@ public class ShipDash : MonoBehaviour {
 
 	void DashRight() {
 		if (useTapTimerRight) {
-			if (doubleTapTimer <= doubleTapTime && Input.GetKeyDown(KeyCode.D) && !dashUsed) { // Second tap
+			if (doubleTapTimer <= doubleTapTime && controls.Right("down") && !dashUsed) { // Second tap
 				ss.Dash(dashForce);
 				dashUsed = true;
 				useTapTimerRight = false;
@@ -73,7 +75,7 @@ public class ShipDash : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.D) && !useTapTimerRight) { // First tap
+		if (controls.Right("down") && !useTapTimerRight) { // First tap
 			useTapTimerRight = true;
 		}
 

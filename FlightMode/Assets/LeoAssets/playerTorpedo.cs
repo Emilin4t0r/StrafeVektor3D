@@ -21,11 +21,11 @@ public class playerTorpedo : MonoBehaviour {
 	private void OnCollisionEnter(Collision collision) {
 		GameObject explosion = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
 
-		Collider[] colliders = Physics.OverlapSphere(explosion.transform.position, explosionRadius); //	\
-		for (int i = 0; i < colliders.Length; i++) { //										 \ 
-			if (colliders[i].gameObject.transform.CompareTag("Enemy")) { //						  ) Find a random enemy within the radius
-				enemy = colliders[i].gameObject; //										 /
-			} // 																	/
+		Collider[] colliders = Physics.OverlapSphere(explosion.transform.position, explosionRadius);
+		for (int i = 0; i < colliders.Length; i++) {
+			if (colliders[i].gameObject.transform.CompareTag("Enemy")) { // Find a random enemy within the radius
+				enemy = colliders[i].gameObject;
+			}
 		}
 		if (enemy != null) {
 			tAI = enemy.transform.GetChild(0).GetComponent<TurretAI>();

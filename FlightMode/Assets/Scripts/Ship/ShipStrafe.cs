@@ -11,22 +11,24 @@ public class ShipStrafe : MonoBehaviour {
 	public float origMaxSpeed;
 	public float gunshipTurnSpeed;
 	public GameObject playerShip;
+	Controls controls;
 
 	float dashCounter;
 	public bool dashing;
 
 	void Start() {
 		origAccSpeed = accelerationSpeed;
+		controls = FindObjectOfType<Controls>();
 	}
 
 	void Update() {
 		float moveTowards = 0;
 		float changeRatePerSecond = 1 / accelerationSpeed * Time.deltaTime;
 
-		if (Input.GetKey(KeyCode.A)) {
+		if (controls.Left("hold")) {
 			moveTowards = -maxSpeed;
 		} else
-		if (Input.GetKey(KeyCode.D)) {
+		if (controls.Right("hold")) {
 			moveTowards = maxSpeed;
 		}
 

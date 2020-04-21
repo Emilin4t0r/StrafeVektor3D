@@ -10,21 +10,23 @@ public class CameraShake : MonoBehaviour {
 	Cannon cannon;
 	ShipMovement ship;
 	GunshipMode gsm;
+	Controls controls;
 	int oldShots;
 
 	private void Start() {
 		cannon = playerGun.GetComponent<Cannon>();
 		ship = GameObject.Find("Ship").GetComponent<ShipMovement>();
 		gsm = GameObject.Find("Ship").GetComponent<GunshipMode>();
+		controls = FindObjectOfType<Controls>();
 	}
 
 	void Update() {
 
 		if (cannon.cannontype == Cannon.CannonType.Semi) {
-			if (Input.GetKeyDown(KeyCode.Mouse0) && !cannon.reloading && oldShots < cannon.shotsFired) {
+			if (controls.Fire("down") && !cannon.reloading && oldShots < cannon.shotsFired) {
 				oldShots = cannon.shotsFired;
 				cameraShake = cannon.cameraShakeAmt;
-			} else if (Input.GetKey(KeyCode.LeftControl)) {
+			} else if (controls.Boost("hold")) {
 				cameraShake = ship.turboCamShake;
 			}
 			if (cannon.shotsFired == 0) {
@@ -47,9 +49,9 @@ public class CameraShake : MonoBehaviour {
 			}
 
 		} else if (cannon.cannontype == Cannon.CannonType.Shotgun) {
-			if (Input.GetKeyDown(KeyCode.Mouse0) && !cannon.reloading) {
+			if (controls.Fire("down") && !cannon.reloading) {
 				cameraShake = cannon.cameraShakeAmt;
-			} else if (Input.GetKey(KeyCode.LeftControl)) {
+			} else if (controls.Boost("hold")) {
 				cameraShake = ship.turboCamShake;
 			}
 			if (cameraShake > 0) {
@@ -69,9 +71,9 @@ public class CameraShake : MonoBehaviour {
 			}
 
 		} else {
-			if (Input.GetKey(KeyCode.Mouse0) && !cannon.reloading) {
+			if (controls.Fire("down") && !cannon.reloading) {
 				cameraShake = cannon.cameraShakeAmt;
-			} else if (Input.GetKey(KeyCode.LeftControl)) {
+			} else if (controls.Boost("hold")) {
 				cameraShake = ship.turboCamShake;
 			} else {
 				cameraShake = 0;

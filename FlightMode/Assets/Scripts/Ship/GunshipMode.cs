@@ -11,13 +11,15 @@ public class GunshipMode : MonoBehaviour {
 	public GameObject cnnTarget;
 	public GameObject playerShip;
 	ShipStrafe strf;
+	Controls controls;
 
 	void Start() {
 		strf = transform.GetComponent<ShipStrafe>();
+		controls = FindObjectOfType<Controls>();
 	}
 
 	void Update() {
-		if (Input.GetKeyDown(KeyCode.E) && inGunshipMode == false) {
+		if (controls.ToggleMode("down") && inGunshipMode == false) {
 			inGunshipMode = true;
 			gunshipCam.SetActive(true);
 			mainCam.SetActive(false);
@@ -28,7 +30,7 @@ public class GunshipMode : MonoBehaviour {
 			playerShip.transform.eulerAngles = new Vector3(px, py, 0);
 			cannon.GetComponent<Cannon>().castRange = 10000;
 
-		} else if (Input.GetKeyDown(KeyCode.E) && inGunshipMode == true) {
+		} else if (controls.ToggleMode("down") && inGunshipMode == true) {
 			inGunshipMode = false;
 			gunshipCam.SetActive(false);
 			mainCam.SetActive(true);
