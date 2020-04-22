@@ -29,9 +29,6 @@ public class ShipArmor : MonoBehaviour {
 			damageResistance = 2; // +100% protection
 			armorWeight = 2; // -100% acceleration
 		}
-	}
-
-	void Update() {
-
+		print(armorWeight);
 	}
 }

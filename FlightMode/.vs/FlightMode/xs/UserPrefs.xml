@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{FCB392A3-6031-0F3E-EBFA-A44214F132CE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ship/ShipArmor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ship/ShipMovement.cs">
     <Files>
       <File FileName="Assets/Scripts/Misc/Controls.cs" Line="24" Column="2" />
       <File FileName="Assets/LeoAssets/Cannon.cs" Line="32" Column="25" />
-      <File FileName="Assets/Scripts/Ship/ShipManager.cs" Line="12" Column="27" />
-      <File FileName="Assets/Scripts/Ship/ShipArmor.cs" Line="28" Column="19" />
-      <File FileName="Assets/Scripts/Ship/ShipMovement.cs" Line="39" Column="37" />
+      <File FileName="Assets/Scripts/Ship/ShipManager.cs" Line="11" Column="5" />
+      <File FileName="Assets/Scripts/Ship/ShipArmor.cs" Line="33" Column="3" />
+      <File FileName="Assets/Scripts/Ship/ShipMovement.cs" Line="40" Column="35" />
       <File FileName="Assets/LeoAssets/flakTorpedo.cs" Line="45" Column="24" />
       <File FileName="Assets/LeoAssets/enemyTorpedo.cs" Line="20" Column="21" />
     </Files>

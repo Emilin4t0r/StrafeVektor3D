@@ -36,6 +36,12 @@ public class ShipMovement : MonoBehaviour {
 
 		turboAccSpd = accelerationSpeed / 2;
 		normalMaxSpeedF = maxSpeedF; // Store normal speed & acceleration values
+		normalAccSpd = accelerationSpeed;
+		Invoke("SetNormalAccSpeed", 0.1f);
+	}
+
+	void SetNormalAccSpeed() {
+		print(armor.armorWeight);
 		normalAccSpd = accelerationSpeed * armor.armorWeight;
 	}
 
